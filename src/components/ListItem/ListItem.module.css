@@ -1,0 +1,37 @@
+.ListItem{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    border-bottom: 1px solid rgba(128,128,128,.3);
+}
+
+.ListItem img{
+    width: 55px;
+    height: 55px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
+
+.ListItem button{
+    background-color: white;
+    border: 1px solid rgba(128,128,128,.3);
+    height: 40px;
+    width: 65px;
+    border-radius: 10px;
+}
+
+.ListItem p{
+    margin: 10px 0 0;
+    font-weight: 400;
+}
+
+.ListItem b{
+    font-weight: 600;
+}
+
+.ListItemContent{
+    flex-grow: 1;
+    padding: 0 20px;
+}

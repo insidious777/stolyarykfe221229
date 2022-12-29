@@ -2,56 +2,33 @@ import React from 'react';
 import logo from './logo.svg';
 import { Counter } from './features/counter/Counter';
 import './App.css';
-
+import {UsersList} from "./components/UsersList/UsersList";
+import {UserInfo, Widget} from "./components/Widget/Widget";
+import jsonData from './initData.json'
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
+    const test =[
+        {
+            "phone": "902-738-3242",
+            "name": "Geordan Aaryn",
+            "nickname": "@geordanaaryn",
+            "email": "geordan.aaryn@fallinhay.com",
+            "position": "Chief Executive Officer",
+            "photo": "1.jpg"
+        },
+        {
+            "phone": "902-782-3286",
+            "name": "Brazil Izair",
+            "nickname": "@brazilizair",
+            "email": "brazil.izair@fallinhay.com",
+            "position": "Managing Director",
+            "photo": "2.jpg"
+        }];
+        return (
+        <div className="App">
+            {/*<Counter />*/}t
+            {/*<UsersList/>*/}
+            <Widget list={test}/>
+        </div>
   );
 }
 
