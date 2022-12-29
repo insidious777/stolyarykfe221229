@@ -2,6 +2,14 @@ import React from 'react';
 import s from './Widget.module.css';
 import {UsersList} from "../UsersList/UsersList";
 
+import {useAppSelector} from "../../app/hooks";
+import {UserDetails} from "../UserDetails/UserDetails";
+
+
+export interface WidgetProps {
+    list: UserInfo[]
+}
+
 export interface UserInfo {
     "phone": string,
     "name": string,
@@ -11,15 +19,15 @@ export interface UserInfo {
     "photo": string
 }
 
-export interface WidgetProps {
-    list: UserInfo[]
-}
-
-export function Widget(list: WidgetProps){
-    console.log(list)
+export function Widget(props: WidgetProps){
+    const isDetailsOpened = useAppSelector((state) => state.widget.isDetailsOpened);
+    const selectedUser = useAppSelector((state) => state.widget.selectedUser);
     return(
         <div className={s.Widget}>
-            <UsersList/>
+            {isDetailsOpened?
+                <UserDetails {...selectedUser}/>:
+                <UsersList list={props.list}/>
+            }
         </div>
     )
 }

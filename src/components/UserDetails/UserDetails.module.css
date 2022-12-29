@@ -1,0 +1,77 @@
+.UserDetails{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: relative;
+}
+
+.UserDetails img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    margin-top: 30px;
+}
+
+.closeButton{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border: none;
+    right: 10px;
+    top:10px;
+    color: black;
+}
+.UserDetails button{
+    cursor: pointer;
+}
+
+.UserDetailsContent{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    align-self: flex-start;
+    padding-left: 30px;
+    margin-bottom: 40px;
+    margin-top: 30px;
+    border-top: 1px solid rgba(128,128,128,.3);
+    width: 100%;
+    box-sizing: border-box;
+    padding-top: 15px;
+}
+
+.UserDetails p{
+    margin: 0;
+}
+
+.UserDetailsContent b{
+    margin-bottom: 10px;
+}
+
+.UserDetailsContent a{
+    color: dodgerblue;
+}
+
+.buttonWrapper{
+    padding: 30px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.sendMessageButton{
+    box-sizing: border-box;
+    width: 100%;
+    background-color: dodgerblue;
+    border: 0;
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.position{
+    color: rgba(128,128,128,.8);
+}

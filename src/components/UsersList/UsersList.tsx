@@ -1,31 +1,41 @@
 import React, {useState} from 'react';
 import s from './UsersList.module.css';
-import {ListItem, UserShortInfo} from "../ListItem/ListItem";
+import {ListItem} from "../ListItem/ListItem";
+import {UserInfo} from "../Widget/Widget";
 
-export function UsersList(){
+
+export interface UsersListProps{
+    list: UserInfo[]
+}
+
+export function UsersList({list}: UsersListProps){
     const [isExpanded, setIsExpanded] = useState(false);
-    const ViewAllButton = () => {
+
+    interface ViewAllButtonProps {
+        onClick: () => void,
+    }
+    function ViewAllButton({onClick}: ViewAllButtonProps){
         return(
             <div className={s.ViewAllButton}>
-                <button>
+                <button onClick={onClick}>
                     View all
                 </button>
             </div>
         )
     }
 
-    const data: UserShortInfo ={
-        'name':'Geordan Aaryn',
-        'nickname':'@geordanaaryn',
-        'photo':'1.jpg',
-    }
-
     return(
         <div className={s.UsersList}>
-            <ListItem {...data}/>
-            <ListItem {...data}/>
-            <ListItem {...data}/>
-            <ViewAllButton/>
+            {list.slice(0, isExpanded? list.length: 3)
+                .map((user, index)=>{
+                return(
+                    <ListItem key={index} {...user}/>
+                )
+            })}
+
+            {!isExpanded &&
+                <ViewAllButton onClick={() => setIsExpanded(true)}/>
+            }
         </div>
     )
 }
